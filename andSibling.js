@@ -1,21 +1,22 @@
 function andSibling(input) {
+    const results = [];
+
     if (input.length < 2) {
         return input;
+    } else if (input.length == 2) {
+        return [input, input[1] + input[0]];
     } else if (!input || typeof input !== "string") {
         return "Invalid Input: Please enter a string!";
     }
-    const results = [];
+    input.split('').forEach(function(char, index, arr) {
+        var subStr = [].concat(arr);
+        subStr.splice(index, 1);
+        andSibling(subStr.join('')).forEach(function(elem) {
+            results.push(char + elem);
+        });
+    });
 
-    for (let i = 0; i < input.length; i++) {
-        const firstChar = input[i];
-        const otherChar = input.substring(0, i) + input.substring(i + 1);
-        const otherPermutations = andSibling(otherChar);
-
-        for (let j = 0; j < otherPermutations.length; j++) {
-            results.push(firstChar + otherPermutations[j]);
-        }
-    }
-    return results;
+    return results.join();
 };
 
 module.exports = andSibling;
