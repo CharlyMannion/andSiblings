@@ -16,6 +16,11 @@ describe('andSibling', () => {
         const expected = "a";
         expect(andSibling(inputStr)).toEqual(expected);
     });
+    it("returns the input string when the string.length === 2", () => {
+        const inputStr = "ab";
+        const expected = "ab,ba";
+        expect(andSibling(inputStr)).toEqual(expected);
+    });
     it("retuns the AND-siblings when the string.length >= 2", () => {
         const inputStr = "236";
         const expected = "236,263,326,362,623,632";
