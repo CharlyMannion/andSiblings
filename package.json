@@ -1,23 +1,27 @@
 {
-  "name": "andSiblings",
-  "version": "1.0.0",
-  "description": "## Exercise Extract the SolutionAND.zip file and import the SolutionAND.js file into your favourite IDE of choice. Two non-negative integers are called AND-Siblings if they can be obtained by each other by rearranging the digits of their decimal representations.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CharlyMannion/andSiblings.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CharlyMannion/andSiblings/issues"
-  },
-  "homepage": "https://github.com/CharlyMannion/andSiblings#readme",
-  "devDependencies": {
-    "jest": "^26.4.2"
-  }
+    "name": "andSiblings",
+    "version": "1.0.0",
+    "description": "## Exercise Extract the SolutionAND.zip file and import the SolutionAND.js file into your favourite IDE of choice. Two non-negative integers are called AND-Siblings if they can be obtained by each other by rearranging the digits of their decimal representations.",
+    "main": "index.js",
+    "scripts": {
+        "precommit": "jest && eslint .",
+        "test": "jest --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CharlyMannion/andSiblings.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/CharlyMannion/andSiblings/issues"
+    },
+    "homepage": "https://github.com/CharlyMannion/andSiblings#readme",
+    "devDependencies": {
+        "jest": "^26.4.2"
+    },
+    "dependencies": {
+        "eslint": "^7.9.0"
+    }
 }
