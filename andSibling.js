@@ -3,14 +3,11 @@ function andSibling(input) {
 
     if (input.length < 2) {
         return input;
+    } else if (input.length === 2) {
+        return [input, input[1] + input[0]];
     } else if (!input || typeof input !== "string") {
         return "Invalid Input: Please enter a string!";
-    } else if (input.length == 2) {
-        const resTwo = [input, input[1] + input[0]];
-        return resTwo;
-        // return resTwo.join();
     }
-
     input.split('').forEach(function(char, index, arr) {
         var subStr = [].concat(arr);
         subStr.splice(index, 1);
