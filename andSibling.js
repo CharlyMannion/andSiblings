@@ -1,4 +1,4 @@
-function andSibling(input) {
+const andSibling = (input) => {
     const filteredStr = input.replace(/\D/g, '');
     const results = [];
     if (input.length < 1) {
@@ -13,14 +13,14 @@ function andSibling(input) {
     if (filteredStr.length === 2) {
         return [filteredStr, filteredStr[1] + filteredStr[0]].join();
     } else {
-        filteredStr.split('').forEach(function(char, index, arr) {
+        filteredStr.split('').forEach((char, index, arr) => {
             var subStr = [].concat(arr);
             subStr.splice(index, 1);
-            andSibling(subStr.join('')).split(',').forEach(function(elem) {
+            andSibling(subStr.join('')).split(',').forEach((elem) => {
                 results.push(char + elem);
             });
         });
-        var unique = results.filter((val, idx, self) => self.indexOf(val) === idx);
+        const unique = results.filter((val, idx, self) => self.indexOf(val) === idx);
         return unique.join();
     };
 };
