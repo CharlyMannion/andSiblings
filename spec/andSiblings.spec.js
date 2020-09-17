@@ -37,4 +37,9 @@ describe('andSibling', () => {
         const expected = "Invalid Input: Please enter a string that contains a numeric character!";
         expect(andSibling(inputStr)).toBe(expected);
     });
+    it("works for a string that contains repeated numeric characters, only returning unique AND-siblings", () => {
+        const inputStr = "223";
+        const expected = "223,232,322";
+        expect(andSibling(inputStr)).toBe(expected);
+    });
 })

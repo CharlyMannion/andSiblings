@@ -21,8 +21,9 @@ function andSibling(input) {
             });
         });
         // filter unique values in array before returning it
-        return results.join();
-    }
+        var unique = results.filter((val, idx, self) => self.indexOf(val) === idx);
+        return unique.join();
+    };
 };
 
 module.exports = andSibling;
