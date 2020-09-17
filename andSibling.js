@@ -20,7 +20,6 @@ function andSibling(input) {
                 results.push(char + elem);
             });
         });
-        // filter unique values in array before returning it
         var unique = results.filter((val, idx, self) => self.indexOf(val) === idx);
         return unique.join();
     };
