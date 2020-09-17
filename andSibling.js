@@ -1,15 +1,19 @@
 function andSibling(input) {
+    const filteredStr = input.replace(/\D/g, '');
     const results = [];
-    if (input.length === 2) {
-        return [input, input[1] + input[0]].join();
-    }
-    // move to top 
-    if (input.length < 2) {
+    if (input.length < 1) {
         return input;
-    } else if (!input || typeof input !== "string") {
-        return "Invalid Input: Please enter a string!";
+    }
+    if (filteredStr.length < 1) {
+        return "Invalid Input: Please enter a string that contains a numeric character!";
+    }
+    if (filteredStr.length < 2) {
+        return filteredStr;
+    }
+    if (filteredStr.length === 2) {
+        return [filteredStr, filteredStr[1] + filteredStr[0]].join();
     } else {
-        input.split('').forEach(function(char, index, arr) {
+        filteredStr.split('').forEach(function(char, index, arr) {
             var subStr = [].concat(arr);
             subStr.splice(index, 1);
             andSibling(subStr.join('')).split(',').forEach(function(elem) {
