@@ -13,23 +13,23 @@ describe('andSibling', () => {
     });
     it("returns the input string when the string.length === 2", () => {
         const inputStr = "45";
-        const expected = "45,54";
+        const expected = "54,45";
         expect(andSibling(inputStr)).toEqual(expected);
     });
     it("returns the AND-siblings when the string.length === 3", () => {
         const inputStr = "236";
-        const expected = "236,263,326,362,623,632";
+        const expected = "632,623,362,326,263,236";
         expect(andSibling(inputStr)).toEqual(expected);
         expect(typeof andSibling(inputStr)).toBe("string");
     });
     it("returns the AND-siblings when the string.length > 3", () => {
         const inputStr = "2345";
-        const expected = "2345,2354,2435,2453,2534,2543,3245,3254,3425,3452,3524,3542,4235,4253,4325,4352,4523,4532,5234,5243,5324,5342,5423,5432";
+        const expected = "5432,5423,5342,5324,5243,5234,4532,4523,4352,4325,4253,4235,3542,3524,3452,3425,3254,3245,2543,2534,2453,2435,2354,2345";
         expect(andSibling(inputStr)).toEqual(expected);
     });
     it('returns the AND-siblings for the extracted integers if the the provided string had non-integers characters and whitespaces', () => {
         const inputStr = "A 3B2 C6D";
-        const expected = "326,362,236,263,632,623";
+        const expected = "632,623,362,326,263,236";
         expect(andSibling(inputStr)).toEqual(expected);
     });
     it("returns an error if passed an input that doesn\'t contain a numeric character", () => {
@@ -39,7 +39,7 @@ describe('andSibling', () => {
     });
     it("works for a string that contains repeated numeric characters, only returning unique AND-siblings", () => {
         const inputStr = "223";
-        const expected = "223,232,322";
+        const expected = "322,232,223";
         expect(andSibling(inputStr)).toBe(expected);
     });
 })

@@ -2,7 +2,8 @@ const andSibling = (input) => {
     const resultSiblings = [];
     const filteredStr = input.replace(/\D/g, '');
     const errorMsg = "Invalid Input: Please enter a string that contains a numeric character!"
-    const arrForTwoChars = [filteredStr, filteredStr[1] + filteredStr[0]].join()
+    const arrForTwoChars = [filteredStr, filteredStr[1] + filteredStr[0]].sort().reverse().join();
+
 
     if (input.length < 1) return input;
     if (filteredStr.length < 1) return errorMsg;
@@ -16,7 +17,7 @@ const andSibling = (input) => {
             resultSiblings.push(char + elem);
         });
     });
-    const uniqueSiblings = [...new Set(resultSiblings)].join();
+    const uniqueSiblings = [...new Set(resultSiblings)].sort().reverse().join();
     return uniqueSiblings;
 };
 
