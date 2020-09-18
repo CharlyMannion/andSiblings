@@ -12,17 +12,16 @@ const andSibling = (input) => {
     }
     if (filteredStr.length === 2) {
         return [filteredStr, filteredStr[1] + filteredStr[0]].join();
-    } else {
-        filteredStr.split('').forEach((char, index, arr) => {
-            var subStr = [].concat(arr);
-            subStr.splice(index, 1);
-            andSibling(subStr.join('')).split(',').forEach((elem) => {
-                results.push(char + elem);
-            });
+    }
+    filteredStr.split('').forEach((char, index, arr) => {
+        var subStr = [].concat(arr);
+        subStr.splice(index, 1);
+        andSibling(subStr.join('')).split(',').forEach((elem) => {
+            results.push(char + elem);
         });
-        const unique = results.filter((val, idx, self) => self.indexOf(val) === idx);
-        return unique.join();
-    };
+    });
+    const unique = [...new Set(results)];
+    return unique.join();
 };
 
 module.exports = andSibling;
