@@ -1,19 +1,10 @@
-# ANDSiblings Tech Test 
+# AND-Siblings Tech Test 
+
+## Description
+A practice tech test solution to find the permutations (or AND-Siblings) of a string of integers, returned as a string.
 
 ## Exercise
-Extract the SolutionAND.zip file and import the SolutionAND.js file into your favourite IDE of choice.
-Two non-negative integers are called AND-Siblings if they can be obtained by each other by rearranging the digits of their decimal representations.
-
-
-Write the function:
-```
-function solution (input) {
-// logic here
-return null;
-}
-```
-
-that, given any String input, returns all the distinct AND-Siblings that can be formed by the positive integers that can be found on it in descending order. Please keep in mind the efficiency of your algorithm when writing the solution.
+Two non-negative integers are called AND-Siblings if they can be obtained by each other by rearranging the digits of their decimal representations. Write a function that, given any String input, returns all the distinct AND-Siblings that can be formed by the positive integers that can be found on it in descending order. Please keep in mind the efficiency of your algorithm when writing the solution.
 
 ### For example:
 * If the input provided is: “236”, then your solution should return &quot;632,623,362,326,263,236&quot;as these are all the combination that can be made with integers that the string contains
